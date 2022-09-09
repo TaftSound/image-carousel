@@ -1,0 +1,19 @@
+{
+  "name": "image-carousel",
+  "version": "1.0.0",
+  "description": "Simple module to create and modify image carousels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TaftSound/image-carousel.git"
+  },
+  "author": "Matthew Murphy matt@taftsound.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TaftSound/image-carousel/issues"
+  },
+  "homepage": "https://github.com/TaftSound/image-carousel#readme"
+}
