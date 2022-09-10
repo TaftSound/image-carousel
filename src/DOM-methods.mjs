@@ -34,6 +34,10 @@ const manipulateDom = {
     const image = document.getElementById(idNumber)
     image.style.visibility = 'visible'
     image.style.left = '100%'
+  },
+  setImageHidden: (idNumber) => {
+    const image = document.getElementById(idNumber)
+    image.style.visibility = 'hidden'
   }
 }
 
