@@ -39,15 +39,19 @@ const getLastIndex = (currentImageIndex) => {
 const shiftForward = () => {
   currentIndex++
   setCurrentImages(currentIndex)
+  setHiddenImages(currentIndex)
 }
 
 const shiftBack = () => {
   currentIndex--
   setCurrentImages(currentIndex)
+  setHiddenImages(currentIndex)
 }
 
 addEventListener('DOMContentLoaded', () => {
   setCurrentImages(currentIndex)
+  manipulateDom.createBackButton(shiftBack)
+  manipulateDom.createForwardButton(shiftForward)
 })
 
 const imageCarousel = {

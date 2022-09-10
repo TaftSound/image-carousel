@@ -1,9 +1,11 @@
+import LeftIcon from './images/chevron-left.svg'
+import RightIcon from './images/chevron-right.svg'
 
 let mainContainer
 
 const createMainContainer = (height, width) => {
   const newContainer = document.createElement('div')
-  newContainer.classList.add('main-container')
+  newContainer.classList.add('carousel-container')
   newContainer.style.height = height
   newContainer.style.width = width
   mainContainer = newContainer
@@ -38,6 +40,20 @@ const manipulateDom = {
   setImageHidden: (idNumber) => {
     const image = document.getElementById(idNumber)
     image.style.visibility = 'hidden'
+  },
+  createBackButton: (eventFunction) => {
+    const backButton = document.createElement('div')
+    backButton.innerHTML = LeftIcon
+    backButton.classList.add('carousel-back-button')
+    mainContainer.appendChild(backButton)
+    backButton.addEventListener('click', eventFunction)
+  },
+  createForwardButton: (eventFunction) => {
+    const forwardButton = document.createElement('div')
+    forwardButton.innerHTML = RightIcon
+    forwardButton.classList.add('carousel-forward-button')
+    mainContainer.appendChild(forwardButton)
+    forwardButton.addEventListener('click', eventFunction)
   }
 }
 
