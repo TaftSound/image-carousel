@@ -6,30 +6,37 @@ let currentIndex = 0
 const addImageToArray = (image) => {
   imageArray.push(image)
 }
-const setCurrentImages = (currentIndex) => {
+const setCurrentImages = () => {
+  checkForIndexReset()
+  console.log(`current index is ${currentIndex}`)
   manipulateDom.setCurrentImage(`${currentIndex}`)
   if (imageArray.length < 2) { return }
   manipulateDom.setRightImage(`${getNextIndex(currentIndex)}`)
   if (imageArray.length < 3) { return }
   manipulateDom.setLeftImage(`${getLastIndex(currentIndex)}`)
+  if (imageArray.length > 3) { setHiddenImages(currentIndex) }
+}
+const checkForIndexReset = () => {
+  if (currentIndex >= imageArray.length) { currentIndex = 0 }
+  if (currentIndex < 0) { currentIndex = (imageArray.length - 1) }
 }
 const setHiddenImages = (currentIndex) => {
-  imageArray.forEach((index) => {
-    if (index === currentIndex) { return }
-    if (index === getNextIndex(currentIndex)) { return }
-    if (index === getLastIndex(currentIndex)) { return }
+  for (const index in imageArray) {
+    if (+index === currentIndex) { return }
+    if (+index === getNextIndex(currentIndex)) { return }
+    if (+index === getLastIndex(currentIndex)) { return }
     manipulateDom.setImageHidden(index)
-  })
+  }
 }
-const getNextIndex = (currentImageIndex) => {
-  let nextIndex = currentImageIndex + 1
+const getNextIndex = () => {
+  let nextIndex = currentIndex + 1
   if (nextIndex >= imageArray.length) {
     nextIndex = nextIndex - imageArray.length
   }
   return nextIndex
 }
-const getLastIndex = (currentImageIndex) => {
-  let lastIndex = currentImageIndex - 1
+const getLastIndex = () => {
+  let lastIndex = currentIndex - 1
   if (lastIndex < 0) {
     lastIndex = lastIndex + imageArray.length
   }
@@ -38,18 +45,16 @@ const getLastIndex = (currentImageIndex) => {
 
 const shiftForward = () => {
   currentIndex++
-  setCurrentImages(currentIndex)
-  setHiddenImages(currentIndex)
+  setCurrentImages()
 }
 
 const shiftBack = () => {
   currentIndex--
-  setCurrentImages(currentIndex)
-  setHiddenImages(currentIndex)
+  setCurrentImages()
 }
 
 addEventListener('DOMContentLoaded', () => {
-  setCurrentImages(currentIndex)
+  setCurrentImages()
   manipulateDom.createBackButton(shiftBack)
   manipulateDom.createForwardButton(shiftForward)
 })

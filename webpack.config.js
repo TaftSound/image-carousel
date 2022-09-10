@@ -5,6 +5,7 @@ const { resourceUsage } = require('process');
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
+  devTool: 'eval-source-map',
   devServer: {
     static: './dist',
   },
