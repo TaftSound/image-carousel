@@ -8,7 +8,6 @@ const addImageToArray = (image) => {
 }
 const setCurrentImages = () => {
   checkForIndexReset()
-  console.log(`current index is ${currentIndex}`)
   manipulateDom.setCurrentImage(`${currentIndex}`)
   if (imageArray.length < 2) { return }
   manipulateDom.setRightImage(`${getNextIndex(currentIndex)}`)

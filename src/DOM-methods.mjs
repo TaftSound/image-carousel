@@ -1,3 +1,4 @@
+import './style.css'
 import LeftIcon from './images/chevron-left.svg'
 import RightIcon from './images/chevron-right.svg'
 
@@ -25,16 +26,19 @@ const manipulateDom = {
   setCurrentImage: (idNumber) => {
     const image = document.getElementById(idNumber)
     image.style.visibility = 'visible'
+    image.style.opacity = '100%'
     image.style.left = '0%'
   },
   setLeftImage: (idNumber) => {
     const image = document.getElementById(idNumber)
-    image.style.visibility = 'visible'
+    image.style.visibility = 'hidden'
+    // image.style.opacity = '0%'
     image.style.left = '-100%'
   },
   setRightImage: (idNumber) => {
     const image = document.getElementById(idNumber)
-    image.style.visibility = 'visible'
+    image.style.visibility = 'hidden'
+    // image.style.opacity = '0%'
     image.style.left = '100%'
   },
   setImageHidden: (idNumber) => {

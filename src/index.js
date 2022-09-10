@@ -1,4 +1,3 @@
-import './style.css'
 import imageCarousel from './carousel-logic.mjs'
 
 import Beach from './images/beach.jpg'
