@@ -18,10 +18,11 @@ seaImage.src = Sea
 sunriseImage.src = Sunrise
 treeImage.src = Tree
 
-imageCarousel.addImage(beachImage)
-imageCarousel.addImage(landscapeImage)
-imageCarousel.addImage(seaImage)
-imageCarousel.addImage(sunriseImage)
-imageCarousel.addImage(treeImage)
-
-// In this module we are going to
+const carouselOne = imageCarousel.createNewCarousel()
+carouselOne.setDimentions('250px', '400px')
+carouselOne.addImage(beachImage)
+carouselOne.addImage(landscapeImage)
+carouselOne.addImage(seaImage)
+carouselOne.addImage(sunriseImage)
+carouselOne.addImage(treeImage)
+document.body.appendChild(carouselOne.getCarousel())

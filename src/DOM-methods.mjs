@@ -1,4 +1,4 @@
-import './style.css'
+import './carousel-style.css'
 import LeftIcon from './images/chevron-left.svg'
 import RightIcon from './images/chevron-right.svg'
 
@@ -41,7 +41,6 @@ const domObjectFactory = () => {
       image.style.left = '100%'
     },
     setImageHidden: (idNumber) => {
-      console.log(idNumber)
       const image = imageMap.get(idNumber)
       image.style.visibility = 'hidden'
     },
