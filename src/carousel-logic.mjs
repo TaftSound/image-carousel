@@ -3,16 +3,19 @@ import manipulateDom from './DOM-methods.mjs'
 const imageArray = []
 let currentIndex = 0
 
+const carouselOne = manipulateDom.createNewCarousel()
+carouselOne.setCarouselDimensions('250px', '400px')
+
 const addImageToArray = (image) => {
   imageArray.push(image)
 }
 const setCurrentImages = () => {
   checkForIndexReset()
-  manipulateDom.setCurrentImage(`${currentIndex}`)
+  carouselOne.setCurrentImage(currentIndex)
   if (imageArray.length < 2) { return }
-  manipulateDom.setRightImage(`${getNextIndex(currentIndex)}`)
+  carouselOne.setRightImage(getNextIndex(currentIndex))
   if (imageArray.length < 3) { return }
-  manipulateDom.setLeftImage(`${getLastIndex(currentIndex)}`)
+  carouselOne.setLeftImage(getLastIndex(currentIndex))
   if (imageArray.length > 3) { setHiddenImages(currentIndex) }
 }
 const checkForIndexReset = () => {
@@ -24,7 +27,8 @@ const setHiddenImages = (currentIndex) => {
     if (+index === currentIndex) { return }
     if (+index === getNextIndex(currentIndex)) { return }
     if (+index === getLastIndex(currentIndex)) { return }
-    manipulateDom.setImageHidden(index)
+    carouselOne.setImageHidden(+index)
+    console.log('image hidden')
   }
 }
 const getNextIndex = () => {
@@ -54,18 +58,22 @@ const shiftBack = () => {
 
 addEventListener('DOMContentLoaded', () => {
   setCurrentImages()
-  manipulateDom.createBackButton(shiftBack)
-  manipulateDom.createForwardButton(shiftForward)
+  carouselOne.createBackButton(shiftBack)
+  // manipulateDom.createBackButton(shiftBack)
+  carouselOne.createForwardButton(shiftForward)
+  // manipulateDom.createForwardButton(shiftForward)
 })
 
 const imageCarousel = {
   addImage: (image) => {
     addImageToArray(image)
     const imageId = (imageArray.length - 1)
-    manipulateDom.addImage(image, imageId)
+    carouselOne.addImage(image, imageId)
+    // manipulateDom.addImage(image, imageId)
   }
 }
 
 export default imageCarousel
 
-document.body.appendChild(manipulateDom.getMainContainer())
+document.body.appendChild(carouselOne.getDomElement())
+// document.body.appendChild(manipulateDom.getMainContainer())

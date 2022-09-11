@@ -42,13 +42,13 @@ body {
 }
 .carousel-back-button:hover,
 .carousel-forward-button:hover {
-  background-color: rgb(0, 0, 0, 0.6);
+  background-color: rgb(0, 0, 0, 0.75);
   cursor: pointer;
 }
 .carousel-back-button:active,
 .carousel-forward-button:active {
   height: 55px;
-  background-color: rgb(0, 0, 0, 0.8);
+  background-color: rgb(0, 0, 0, 0.9);
   transition: .1s;
 }
 .carousel-back-button:hover svg,
