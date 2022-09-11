@@ -1,5 +1,5 @@
 {
-  "name": "image-carousel",
+  "name": "@taftsound/carousel-creator",
   "version": "1.0.0",
   "description": "Simple module to create and modify image carousels",
   "main": "index.js",
