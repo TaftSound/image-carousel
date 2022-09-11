@@ -1,14 +1,5 @@
 
-body {
-  min-height: 100vh;
-  margin: 0px;
-  background-color: lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-container {
+.CRSL-container {
   background-color: black;
   border: solid 3px black;
   border-radius: 10px;
@@ -16,7 +7,7 @@ body {
   position: relative;
 }
 
-.carousel-container img {
+.CRSL-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -24,38 +15,38 @@ body {
   transition: .5s;
 }
 
-.carousel-back-button,
-.carousel-forward-button {
+.CRSL-back-button,
+.CRSL-forward-button {
   height: 60px;
   width: 40px;
   position: absolute;
   background-color: rgb(0, 0, 0, 0.0);
   transition: .2s;
 }
-.carousel-back-button svg,
-.carousel-forward-button svg {
+.CRSL-back-button svg,
+.CRSL-forward-button svg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   fill: rgb(255, 255, 255, 0.6);
 }
-.carousel-back-button:hover,
-.carousel-forward-button:hover {
+.CRSL-back-button:hover,
+.CRSL-forward-button:hover {
   background-color: rgb(0, 0, 0, 0.75);
   cursor: pointer;
 }
-.carousel-back-button:active,
-.carousel-forward-button:active {
+.CRSL-back-button:active,
+.CRSL-forward-button:active {
   height: 55px;
   background-color: rgb(0, 0, 0, 0.9);
   transition: .1s;
 }
-.carousel-back-button:hover svg,
-.carousel-forward-button:hover svg {
+.CRSL-back-button:hover svg,
+.CRSL-forward-button:hover svg {
   fill: rgb(255, 255, 255);
 }
-.carousel-back-button {
+.CRSL-back-button {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   left: -3px;
@@ -63,7 +54,7 @@ body {
   bottom: 0;
   margin: auto 0;
 }
-.carousel-forward-button {
+.CRSL-forward-button {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   right: -3px;

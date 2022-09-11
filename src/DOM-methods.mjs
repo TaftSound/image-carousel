@@ -4,7 +4,7 @@ import RightIcon from './images/chevron-right.svg'
 
 const createMainContainer = () => {
   const newContainer = document.createElement('div')
-  newContainer.classList.add('carousel-container')
+  newContainer.classList.add('CRSL-container')
   return newContainer
 }
 
@@ -47,14 +47,14 @@ const domObjectFactory = () => {
     createBackButton: (eventFunction) => {
       const backButton = document.createElement('div')
       backButton.innerHTML = LeftIcon
-      backButton.classList.add('carousel-back-button')
+      backButton.classList.add('CRSL-back-button')
       mainContainer.appendChild(backButton)
       backButton.addEventListener('click', eventFunction)
     },
     createForwardButton: (eventFunction) => {
       const forwardButton = document.createElement('div')
       forwardButton.innerHTML = RightIcon
-      forwardButton.classList.add('carousel-forward-button')
+      forwardButton.classList.add('CRSL-forward-button')
       mainContainer.appendChild(forwardButton)
       forwardButton.addEventListener('click', eventFunction)
     }
